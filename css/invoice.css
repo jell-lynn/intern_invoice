@@ -23,20 +23,8 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
-  /* box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); */
 }
 
-/* .wrapper-invoice .invoice .invoice-information {
-  float: right;
-  text-align: right;
-}
-.wrapper-invoice .invoice .invoice-information b {
-  color: "#0F172A";
-}
-.wrapper-invoice .invoice .invoice-information p {
-  font-size: 0.5cm;
-  color: rgb(44, 44, 44);
-} */
 .invoice-image-talaadthai {
   width: 64px;
   height: 64px;
@@ -99,7 +87,6 @@ body {
   background-color: #eeeeee;
 }
 
-
 .divider-box {
   width: 100%;
   height: 10px;
@@ -107,12 +94,8 @@ body {
 }
 
 th, td {
-
   overflow: hidden; /* บังคอลัมน์เมื่อข้อความเกินขนาด */
 }
-
-
-
 
 .wrapper-invoice .invoice .invoice-body .table tbody tr td {
   font-size: 1.1vh;
@@ -229,18 +212,30 @@ th, td {
   line-height: 0.5; /* ลบเส้นขอบด้านซ้ายของคอลัมน์แรก */
 }
 
+.calculate-invoice td:last-child {
+  text-align: right;
+}
+
+.calculate-invoice table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calculate-invoice td {
+  /* border: none;  */
+  /* border: solid none; */
+}
+
 /* ด้านล่างสุด */
 .signature-form p {
   padding-left: 10px;
   font-size: 10px;
   text-align: left;
   display: inline;
-
 }
 .underline {
   width: 250px; 
   border-bottom: 1px solid  black; 
-  /* margin-left: 50px; */
   display: inline-block;
 
 }
@@ -275,6 +270,7 @@ th, td {
   width: 4%;
   float: left;
   padding: 15px;
+  padding-left: 0px;
 }
 .bottom-form4{
   width: 7%;
@@ -291,5 +287,6 @@ th, td {
   width: 5%;
   float: left;
   padding: 15px;
+  padding-left: 0px;
 }
-/*# sourceMappingURL=invoice.css.map */
+
