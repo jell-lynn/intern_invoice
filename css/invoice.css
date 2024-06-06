@@ -107,8 +107,15 @@ body {
 }
 
 th, td {
-
   overflow: hidden; /* บังคอลัมน์เมื่อข้อความเกินขนาด */
+}
+
+#Quotation-info {
+  border-left: none;
+}
+
+#no-border-right {
+  border-right: none;
 }
 
 

@@ -8,10 +8,10 @@ function fetchJSONData() {
         })
         .then((data) => {
             // ส่วนรายละเอียดลูกค้า
-            const quatation_info = document.getElementById('Quatation-info');
+            const quotation_info = document.getElementById('Quotation-info');
             const customer_info = data["Quotation"]["customer"];
             for (const info in customer_info) {
-                quatation_info.innerHTML += `${customer_info[info]}<br>`;
+                quotation_info.innerHTML += `${customer_info[info]}<br>`;
             }
             
             //ส่วนข้อมูล payment
