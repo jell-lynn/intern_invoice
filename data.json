@@ -1,0 +1,138 @@
+{
+    "seller":{
+        "seller_address":"บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) 118/1 อาคารทิปโก้ ทาวเวอร์ 2 ชั้นที่ 17 ถนนพระราม 6 แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 เลขประจำตัวผู้เสียภาษี: 0105564108719"
+    },
+    "Quotation":{
+        "customer":{
+            "Customer_ID":"125566017982_สำนักงานใหญ่",
+            "Store":"Yole",
+            "Company":"บริษัท เมจิคอล คราฟส์แมน จำกัด",
+            "Branch_No.":"สำนักงานใหญ่",
+            "Branch":"สำนักงานใหญ่",
+            "Address":"13/7 หมู่ 8 ตำบล บางม่วง อำเภอ บางใหญ่ จังหวัด นนทบุรี 11140",
+            "Phone Number":"0936919197",
+            "Email":"info.magicalcraftsman@gmail.com",
+            "Tax_ID":"125566017982",
+            "Contact_Name":"Khun Matt Tangpaosak",
+            "Phone":"0936919197"
+        },
+        "Doc_Date":"4/19/2024",
+        "Doc_No":"240424B001",
+        "payment":{
+            "Customer_Group":"B2B Special Price : Drinks & Dessert",
+            "Note":"ใบกำกับภาษีจะรวมส่วนลดไม่แยกรายบรรทัด",
+            "Bid period":"7",
+            "PaymentTerm":"ชำระเงินก่อนส่งสินค้า",
+            "Term":"ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น"
+        }
+    },
+    "Orderlist":{
+        "items":[
+            {
+                "Order_No":"1",
+                "Product_ID":"DBKK001",
+                "Order":"ค่าขนส่ง",
+                "Vat_Item":"Non Vat",
+                "Quantity":1,
+                "Unit":"Drop",
+                "Unit_price":99.00,
+                "Unit_discount":99.00,
+                "Price_per_unit_after_disc":0.00,
+                "Total_price_before_disc":99.00,
+                "Total_discount":99.00,
+                "Total_price_after_disc":0.00,
+                "Vat":0.00
+            },
+            {
+                "Order_No":"2",
+                "Product_ID":"Blueberry_B2B_01",
+                "Order":"GBT_บลูเบอร์รี่ [125 กรัม / แพ็ค]",
+                "Vat_Item":"Non Vat",
+                "Quantity":12,
+                "Unit":"แพค",
+                "Unit_price":89.00,
+                "Unit_discount":10.00,
+                "Price_per_unit_after_disc":79.00,
+                "Total_price_before_disc":1068.00,
+                "Total_discount":120.00,
+                "Total_price_after_disc":948.00,
+                "Vat":0.00
+            },
+            {
+                "Order_No":"3",
+                "Product_ID":"Banana_HT_B2B_01",
+                "Order":"กล้วยหอมทอง [1.8-2.2 กก. / หวี]",
+                "Vat_Item":"Non Vat",
+                "Quantity":1,
+                "Unit":"หวี",
+                "Unit_price":89.00,
+                "Unit_discount":4.00,
+                "Price_per_unit_after_disc":85.00,
+                "Total_price_before_disc":89.00,
+                "Total_discount":4.00,
+                "Total_price_after_disc":85.00,
+                "Vat":0.00
+            },
+            {
+                "Order_No":"4",
+                "Product_ID":"Kiwi_KW_B2B_03",
+                "Order":"กีวี่เขียว ลูกละ (ขนาด 110-120กรัม/ลูก)",
+                "Vat_Item":"Non Vat",
+                "Quantity":10,
+                "Unit":"ลูก",
+                "Unit_price":22.00,
+                "Unit_discount":2.00,
+                "Price_per_unit_after_disc":20.00,
+                "Total_price_before_disc":220.00,
+                "Total_discount":20.00,
+                "Total_price_after_disc":200.00,
+                "Vat":0.00
+            },
+            {
+                "Order_No":"5",
+                "Product_ID":"S31825_01",
+                "Order":"สตรอว์เบอร์รี่เกาหลี 250 กรัม x 4 แพ็ค (รวม 1 กก./เซต)",
+                "Vat_Item":"Non Vat",
+                "Quantity":5,
+                "Unit":"แพค",
+                "Unit_price":580.00,
+                "Unit_discount":30.00,
+                "Price_per_unit_after_disc":550.00,
+                "Total_price_before_disc":2900.00,
+                "Total_discount":150.00,
+                "Total_price_after_disc":2750.00,
+                "Vat":0.00
+            }
+        ],
+        "Total_items":{
+            "Total_price_before_disc":4376.00,
+            "Total_discount":393.00,
+            "Total_price_after_disc":3983.00,
+            "Vat":0.00
+        }
+    },
+    "Total Price":{
+        "Product_cost_before_disc":4277.00,
+        "Shipping_cost":99.00,
+        "Total_product_shipping":4376.00,
+        "Product_discount":294.00,
+        "Shipping_discount":99.00,
+        "Include_discount":393.00,
+        "Product_cost_after_disc":3983.00,
+        "Shipping_cost_after_disc":0.00,
+        "Total_amount_after_disc_before_VAT":3983.00,
+        "VAT 7%":0.00,
+        "Product_cost_shipping_after_VAT":3983.00
+    },
+    "Sign":{
+        "Offer_by":"Warinthip Sainara",
+        "Approved_by":"Maneesap Rojdamrongratana",
+        "Date_sign":"4/19/2024"
+    },
+    "CodeSetting":{
+        "Vochure_Code":"Min",
+        "Vochure_Name":"Yole240424B001",
+        "Product_Disc":294.00,
+        "Delivery_Disc":99.00
+    }
+}
