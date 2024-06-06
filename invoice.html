@@ -20,6 +20,7 @@
 
 
   <link rel="stylesheet" href="./css/invoice.css" />
+  <script src="./script.js"></script>
 </head>
 
 <body>
@@ -52,49 +53,47 @@
       <div class="invoice-body">
         <table class="table">
           <thead>
-            <tr>
-              <th>ใบเสนอราคา <br>
-                Quatation </th>
-              <th rowspan="2" style="text-align: start;">วันที่ออกเอกสาร <br> เลขที่เอกสาร xxxxxx</th>
-            </tr>
+              <tr>
+                  <th colspan="2">ใบเสนอราคา <br> Quatation </th>
+                  <th rowspan="2" style="text-align: start;">วันที่ออกเอกสาร <br> เลขที่เอกสาร xxxxxx</th>
+              </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Customer ID <span style="padding-left: 54px;">1111111111</span> <br>
-                ร้าน <span style="padding-left: 97px;">sth</span> <br>
-                นามบริษัท <span style="padding-left: 69px;">บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่)</span> <br>
-                สาขาที่ <span style="padding-left: 82px;">สำนักงานใหญ่</span> <br>
-                สาขา <span style="padding-left: 89px;">สำนักงานใหญ่</span> <br>
-                ที่อยู่ <span style="padding-left: 92px;">บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่)</span> <br>
-                เบอร์โทรศัพท์ <span style="padding-left: 53px;">0000000000</span> <br>
-                E-mail <span style="padding-left: 80px;">aaaaaa.aa@gmail.com </span> <br>
-                เลขประจำตัวผู้เสียภาษี <span style="padding-left: 17px;">1111111111</span> <br>
-                ชื่อผู้ติดต่อ <span style="padding-left: 67px;">Aaaaaa Aaaaaa</span> <br>
-                โทรศัพท์ <span style="padding-left: 74px;">0111222222</span> <br>
-              </td>
-              <td>Customer Group <span style="padding-left: 74px;">B2B Special Price : Drinks& Dessert</span> <br>
-                หมายเหตุ <span style="padding-left: 20px;">ใบกำกับภาษีจะรวมส่วนลดไม่แยกรายบรรทัด</span> <br>
-                ระยะเวลาการเสนอราคา <span style="padding-left: 20px;">7</span> <span style="padding-left: 20px;">วัน
-                  นับจากวันที่ออกเอกสาร</span> <br>
-                เงื่อนไขการชำระเงิน : ชำระเงินก่อนส่งสินค้า <br> <br>
-                <div class="checkbox-container">
-                  <label class="checkbox-label">
-                    <input type="checkbox">
-                    ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท
-                  </label><br>
-                  <label class="checkbox-label">
-                    <input type="checkbox">
-                    ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น
-                  </label><br>
-                  <label class="checkbox-label">
-                    <input type="checkbox">
-                    ชำระผ่านลิงค์การชำระเงิน
-                  </label>
-                </div>
-              </td>
-            </tr>
+              <tr>
+                  <td>Customer ID <br>
+                      ร้าน <br>
+                      นามบริษัท <br>
+                      สาขาที่ <br>
+                      สาขา <br>
+                      ที่อยู่ <br>
+                      เบอร์โทรศัพท์ <br>
+                      E-mail <br>
+                      เลขประจำตัวผู้เสียภาษี <br>
+                      ชื่อผู้ติดต่อ <br>
+                      โทรศัพท์ <br>
+                  </td>
+                  <td id="Quatation-info"></td>
+                  <td>Customer Group <div id="customer-gr"></div><br>
+                      หมายเหตุ <div id="note"></div><br>
+                      ระยะเวลาการเสนอราคา <div id="bid-period"></div><br>
+                      เงื่อนไขการชำระเงิน : <div id="payment-term"></div><br>
+                      <div class="checkbox-container" id="payment-checkbox">
+                          <label class="checkbox-label">
+                          <input type="checkbox" name="payment" value="ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท">ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท<br>
+                          </label>
+
+                          <label class="checkbox-label">
+                          <input type="checkbox" name="payment" value="ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น">ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น<br>
+                          </label>
+
+                          <label class="checkbox-label">
+                          <input type="checkbox" name="payment" value="ชำระผ่านลิงค์การชำระเงิน">ชำระผ่านลิงค์การชำระเงิน
+                          </label>
+                      </div>
+                  </td>
+              </tr>
           </tbody>
-        </table>
+      </table>
 
         <div class="divider-box">
           <div class="divider"></div>
@@ -102,55 +101,26 @@
 
         <table class="table">
           <thead>
-            <tr>
-              <th style="width: 20px;">ลำดับ </th>
-              <th>รหัส</th>
-              <th style="width: 200px;">รายการ </th>
-              <th>Vat <br> Item </th>
-              <th>จำนวน</th>
-              <th>หน่วย </th>
-              <th>ราคาต่อหน่วย </th>
-              <th>ส่วนลดต่อหน่วย</th>
-              <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
-              <th>ส่วนลดรวม</th>
-              <th>ราคารวมหลังหักส่วนลด</th>
-              <th>ราคาต่อหน่วย </th>
-              <th>ภาษีมูลค่าเพิ่ม</th>
-            </tr>
+              <tr>
+                  <th style="width: 20px;">ลำดับ </th>
+                  <th>รหัส</th>
+                  <th style="width: 200px;">รายการ </th>
+                  <th>Vat <br> Item </th>
+                  <th>จำนวน</th>
+                  <th>หน่วย </th>
+                  <th>ราคาต่อหน่วย </th>
+                  <th>ส่วนลดต่อหน่วย</th>
+                  <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
+                  <th>ส่วนลดรวม</th>
+                  <th>ราคารวมหลังหักส่วนลด</th>
+                  <th>ราคาต่อหน่วย </th>
+                  <th>ภาษีมูลค่าเพิ่ม</th>
+              </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td style="text-align: center;">1</td>
-              <td>DBKK001</td>
-              <td>aaaaaaaa</td>
-              <td>aaa</td>
-              <td style="text-align: center;">12</td>
-              <td style="text-align: center;">pack</td>
-              <td>999</td>
-              <td>999</td>
-              <td>999</td>
-              <td>999</td>
-              <td>999</td>
-              <td>999</td>
-              <td>999</td>
-            </tr>
-
-            <tr>
-              <td colspan="2" style="text-align: center;">รวมรายการ</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td style="text-align: center;"></td>
-              <td style="text-align: center;"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+          <tbody id="order-list">
+              <!--เพิ่มข้อมูลสินค้าลงทีนี้-->
           </tbody>
-        </table>
+      </table>
 
         <head>
           <style>
