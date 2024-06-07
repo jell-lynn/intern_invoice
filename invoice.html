@@ -23,29 +23,25 @@
       </span>
   </button>
   <section class="wrapper-invoice">
-    <!-- switch mode rtl by adding class rtl on invoice class -->
     <div class="invoice">
       <div class="invoice-information">
         <div class="invoice-information-talaadthai">
-          <p>บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) <br>
+          <p style="font-size: 11px;">บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) <br>
             118/1 อาคารทิปโก้ ทาวเวอร์ 2 ชั้นที่ 17 ถนนพระราม 6 <br>
             แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 <br>
             <!-- หาวิธีทำให้เลขไม่ static -->
             เลขประจำตัวผู้เสียภาษี: 0105564108719 <br>
         </div>
-
-
       </div>
-
-      <div class="invoice-logo-brand">
+      <!-- <div class="invoice-logo-brand"> -->
         <!-- <h2>Tampsh.</h2> -->
         <!-- <img src="./assets/image/tampsh.png" alt="" /> -->
-      </div>
+      <!-- </div> -->
       <!-- invoice head -->
-      <div class="invoice-head">
+      <!-- <div class="invoice-head">
         <div class="head client-data">
         </div>
-      </div>
+      </div> -->
       <!-- invoice body-->
       <div class="invoice-body">
         <table class="table table-bordered ">
@@ -95,28 +91,31 @@
           <div class="divider"></div>
         </div> -->
 
-       <table style="width:100%; font-size: 10px;">
-          <thead>
-              <tr>
-                  <th >ลำดับ </th>
-                  <th>รหัส</th>
-                  <th style="width: 200px;">รายการ </th>
-                  <th>Vat <br> Item </th>
-                  <th >จำนวน</th>
-                  <th>หน่วย </th>
-                  <th>ราคาต่อหน่วย </th>
-                  <th>ส่วนลดต่อหน่วย</th>
-                  <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
-                  <th>ส่วนลดรวม</th>
-                  <th>ราคารวมหลังหักส่วนลด</th>
-                  <th>ราคาต่อหน่วย </th>
-                  <th>ภาษีมูลค่าเพิ่ม</th>
-              </tr>
-          </thead>
-          <tbody id="order-list"> 
-              <!--เพิ่มข้อมูลสินค้าลงทีนี้-->
-         </tbody>
-      </table>
+        <div class="list-invoice">
+          <table style="width:100%; font-size: 10px;">
+            <thead>
+                <tr>
+                    <th >ลำดับ </th>
+                    <th>รหัส</th>
+                    <th style="width: 200px;">รายการ </th>
+                    <th>Vat <br> Item </th>
+                    <th >จำนวน</th>
+                    <th>หน่วย </th>
+                    <th>ราคาต่อหน่วย </th>
+                    <th>ส่วนลดต่อหน่วย</th>
+                    <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
+                    <th>ส่วนลดรวม</th>
+                    <th>ราคารวมหลังหักส่วนลด</th>
+                    <th>ราคาต่อหน่วย </th>
+                    <th>ภาษีมูลค่าเพิ่ม</th>
+                </tr>
+            </thead>
+            <tbody id="order-list"> 
+                <!--เพิ่มข้อมูลสินค้าลงทีนี้-->
+           </tbody>
+        </table>
+        </div>
+       
 
       <!-- calculate invoice -->
         <head>
@@ -202,8 +201,6 @@
             </table>
           </div>
         </tbody>
-
-          <br />
           <br />
           <div class="signature-form">
             <p>จัดทำโดย</p>
@@ -264,9 +261,6 @@
             </div>
           </div>
   </section>
-  <div class="copyright">
-    <p>Created by </p>
-  </div>
 </body>
 
 </html>
