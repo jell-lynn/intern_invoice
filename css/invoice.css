@@ -1,20 +1,26 @@
-@page {
-  size: a4;
-  margin: 0;
-}
-
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
+/* @import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
 * {
   margin: 0 auto;
   padding: 0 auto;
   user-select: none;
-}
+} */
+
 
 body {
-  
+  padding: 20px;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   background-color: #dcdcdc;
+}
+.btn-print{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  outline: none;
+  border: none;
 }
 
 .wrapper-invoice {
@@ -28,7 +34,6 @@ body {
   display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
-  /* box-shadow: 0 0 0.5cm rgba(0,0,0,0.5); */
 }
 
 /* .wrapper-invoice .invoice .invoice-information {
@@ -42,36 +47,30 @@ body {
   font-size: 0.5cm;
   color: rgb(44, 44, 44);
 } */
-/* .invoice-image-talaadthai {
+.invoice-image-talaadthai {
   width: 64px;
-  height: 64px; 
-  position: absolute; 
+  height: 64px;
+  position: absolute;
+/* overflow: hidden; */
   top: 0; 
-  left:10; 
-} */
-
-.wrapper-invoice .invoice .invoice-logo-brand{
-  padding-left: 20px;
-  padding-top: 10px;
+  left:0; 
 }
+
 .invoice-information-talaadthai {
-  font-size: 12px;
   padding-top: 0.5cm;
   padding-right: 0.5cm;
-  float: right; 
-  text-align: right; 
+  /* float: right;  */
+  /* text-align: right;  */
 }
 
 .wrapper-invoice .invoice .invoice-head {
   display: flex;
-  /* margin-top: 1vh; */
-  align-content: center;
+  margin-top: 8vh;
 }
 
-/* .wrapper-invoice .invoice .invoice-head .client-info {
+.wrapper-invoice .invoice .invoice-head .client-info {
   text-align: left;
 }
-
 .wrapper-invoice .invoice .invoice-head .client-info h2 {
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -94,43 +93,29 @@ body {
 .wrapper-invoice .invoice .invoice-head .client-data p {
   font-size: 2vh;
   color: gray;
-} */
-
+}
 .wrapper-invoice .invoice .invoice-body {
-  margin-top: 2vh;
+  margin-top: 1vh;
 }
 .wrapper-invoice .invoice .invoice-body .table {
   border-collapse: collapse;
-  width: 95%;
+  width: 100%;
 }
 .wrapper-invoice .invoice .invoice-body .table thead tr th {
-  font-size: 1.25vh;
+  font-size: 1.2vh;
   border: 1px solid #dcdcdc;
-  text-align: center;
+
   padding: 1vh;
-  /* background-color: #eeeeee; */
+  background-color: #eeeeee;
+}
+.list-invoice{
+  margin-bottom: 1vh; 
 }
 
-
-/* .divider-box {
-  width: 100%;
-  height: 10px;
-} */
 
 th, td {
-  overflow: hidden; /* บังคอลัมน์เมื่อข้อความเกินขนาด */
+  overflow: hidden; 
 }
-
-#Quotation-info {
-  border-left: none;
-}
-
-#no-border-right {
-  border-right: none;
-}
-
-
-
 
 .wrapper-invoice .invoice .invoice-body .table tbody tr td {
   font-size: 1.1vh;
@@ -195,16 +180,31 @@ th, td {
   font-size: 1.8vh;
 }
 
-@media print {
-  .table thead tr th {
-    /* -webkit-print-color-adjust: exact; */
-    background-color: #eeeeee !important;
-  }
 
-  .copyright {
-    display: none;
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: 297mm;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .wrapper-invoice, .wrapper-invoice * {
+    visibility: visible;
+  }
+  .wrapper-invoice {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  body > *:not(.wrapper-invoice) {
+    display: none !important;
   }
 }
+
+
 .rtl {
   direction: rtl;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -244,8 +244,13 @@ th, td {
   font-size: 10px;
 }
 .calculate-invoice tr {
-  line-height: 0.5; /* ลบเส้นขอบด้านซ้ายของคอลัมน์แรก */
+  line-height: 0.5; 
 }
+.line-calculate {
+  border: none; 
+}
+
+
 
 /* ด้านล่างสุด */
 .signature-form p {
@@ -264,11 +269,11 @@ th, td {
 }
 
 .full-width-box {
-  width: auto; /* ความกว้างเต็มหน้าจอ */
-  height: auto; /* ความสูงของกล่อง */
-  border: 1px solid black; /* ขอบ 2px สีดำ */
-  box-sizing: border-box; /* จำนวนเต็มของความกว้างและความสูงรวม border และ padding */
-  margin: 20px 0; /* ระยะห่างด้านบนและด้านล่างของกล่อง */
+  width: auto; 
+  height: auto; 
+  border: 1px solid black; 
+  box-sizing: border-box; 
+  margin: 20px 0; 
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -310,4 +315,49 @@ th, td {
   float: left;
   padding: 15px;
 }
-/*# sourceMappingURL=invoice.css.map */
+
+.list-invoice {
+  margin-top: 1vh;
+}
+
+/* new */
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+table#t01 {
+  width: 100%;
+  background-color: #f2f2d1;
+}
+
+.top-section table {
+  border-collapse: collapse;
+}
+
+.top-section table,
+.top-section th,
+.top-section td {
+  border: none;
+}
+
+.no-border-right {
+  border-right: none;
+}
+
+.no-border-left {
+  border-left: none;
+}
+
+.title-bill th {
+  text-align: center;
+  background-color: rgb(238, 238, 238);
+}

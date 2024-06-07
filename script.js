@@ -7,22 +7,22 @@ function fetchJSONData() {
             return res.json();
         })
         .then((data) => {
-            // ส่วนวันที่ออกเอกสารและเลขที่เอกสาร
-            const doc_info = document.getElementById("doc-info");
-            doc_info.innerHTML = `วันที่ออกเอกสาร: ${data["Quotation"]["Doc_Date"]} <br> เลขที่เอกสาร: ${data["Quotation"]["Doc_No"]}`;
-
             // ส่วนรายละเอียดลูกค้า
             const quotation_info = document.getElementById('Quotation-info');
             const customer_info = data["Quotation"]["customer"];
             for (const info in customer_info) {
                 quotation_info.innerHTML += `${customer_info[info]}<br>`;
             }
-            
+
+            //ส่วนข้อมูลเอกสาร วันที่ขเลขที่
+            document.getElementById('doc-date').innerHTML = `<b>วันที่ออกเอกสาร</b> ${data["Quotation"]["Doc_Date"]}`;
+            document.getElementById('doc-no').innerHTML = `<b>เลขที่เอกสาร</b> ${data["Quotation"]["Doc_No"]}`;
+
             //ส่วนข้อมูล payment
-            document.getElementById('customer-gr').innerHTML = data["Quotation"]["payment"]["Customer_Group"];
-            document.getElementById('note').innerHTML = data["Quotation"]["payment"]["Note"];
-            document.getElementById('bid-period').innerHTML = data["Quotation"]["payment"]["Bid period"];
-            document.getElementById('payment-term').innerHTML = data["Quotation"]["payment"]["PaymentTerm"];
+            document.getElementById('customer-gr').innerHTML = `<b>Customer Group</b> ${data["Quotation"]["payment"]["Customer_Group"]}`;
+            document.getElementById('note').innerHTML = `<b>หมายเหตุ</b> ${data["Quotation"]["payment"]["Note"]}`;
+            document.getElementById('bid-period').innerHTML = `<b>ระยะเวลาการเสนอราคา</b> ${data["Quotation"]["payment"]["Bid period"]} วัน นับจากวันที่ออกเอกสาร`;
+            document.getElementById('payment-term').innerHTML = `<b>เงื่อนไขการชำระเงิน : </b> ${data["Quotation"]["payment"]["PaymentTerm"]}`;
             // ส่วน check box
             const payment_term = data["Quotation"]["payment"]["Term"];
             const checkboxes = document.querySelectorAll('input[name="payment"]'); // เลือก checkbox ทั้งหมดที่มีชื่อ "payment"
@@ -58,6 +58,7 @@ function fetchJSONData() {
 
             // เพิ่มแถวลงใน tbody
             order_list.innerHTML = rows;
+
             
 
             //ส่วนราคารวมสินค้า
@@ -67,8 +68,7 @@ function fetchJSONData() {
                     cell.innerHTML = value;
                 }
             });
-        }
-    )
+        })
         .catch((error) => {
             console.error("Unable to fetch data:", error);
         });
