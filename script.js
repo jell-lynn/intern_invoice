@@ -7,6 +7,11 @@ function fetchJSONData() {
             return res.json();
         })
         .then((data) => {
+            // ส่วนวันที่ออกเอกสารและเลขที่เอกสาร
+            const doc_info = document.getElementById("doc-info");
+            doc_info.innerHTML = `วันที่ออกเอกสาร: ${data["Quotation"]["Doc_Date"]} 
+            <br> เลขที่เอกสาร: ${data["Quotation"]["Doc_No"]}`;
+
             // ส่วนรายละเอียดลูกค้า
             const quotation_info = document.getElementById('Quotation-info');
             const customer_info = data["Quotation"]["customer"];
@@ -52,10 +57,10 @@ function fetchJSONData() {
                         </tr>`;
                     });
 
-            // เพิ่มแถวลงใน tbody
-            order_list.innerHTML = rows;
-            
-
+                    // เพิ่มแถวลงใน tbody
+                    order_list.innerHTML = rows;
+        })
+  
             //ส่วนราคารวมสินค้า
             Object.entries(data["Total Price"]).forEach(([key, value], index) => {
                 let cell = document.getElementById(`value${index+1}`)
