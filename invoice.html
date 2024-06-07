@@ -25,7 +25,7 @@
   <section class="wrapper-invoice">
     <div class="invoice">
       <div class="invoice-information">
-        <div class="invoice-information-talaadthai">
+        <div class="invoice-information-talaadthai text-center">
           <p style="font-size: 11px;">บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) <br>
             118/1 อาคารทิปโก้ ทาวเวอร์ 2 ชั้นที่ 17 ถนนพระราม 6 <br>
             แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 <br>
@@ -33,10 +33,11 @@
             เลขประจำตัวผู้เสียภาษี: 0105564108719 <br>
         </div>
       </div>
-      <!-- <div class="invoice-logo-brand"> -->
+      
+      <div class="invoice-logo-brand text-c">
         <!-- <h2>Tampsh.</h2> -->
-        <!-- <img src="./assets/image/tampsh.png" alt="" /> -->
-      <!-- </div> -->
+        <!-- <img src="https://lh5.googleusercontent.com/d/16dKfWv3EhqkOJ9nKil93LWyp4bCSZjYd" width="200px"> -->
+      </div>
       <!-- invoice head -->
       <!-- <div class="invoice-head">
         <div class="head client-data">
@@ -53,7 +54,7 @@
           </thead>
           <tbody>
               <tr>
-                  <td id="no-border-right" >Customer ID <br>
+                  <td class="no-border-right">Customer ID <br>
                       ร้าน <br>
                       นามบริษัท <br>
                       สาขาที่ <br>
@@ -65,7 +66,7 @@
                       ชื่อผู้ติดต่อ <br>
                       โทรศัพท์ <br>
                   </td>
-                  <td id="Quotation-info"></td>
+                  <td id="Quotation-info" class="no-border-left"></td>
                   <td>Customer Group <div id="customer-gr"></div><br>
                       หมายเหตุ <div id="note"></div><br>
                       ระยะเวลาการเสนอราคา <div id="bid-period"></div><br>
@@ -143,60 +144,59 @@
         <tbody>
           <div class="calculate-invoice">
             <table style="width:100%">
-              <tr>
-                <td >รวมเงิน</td>
-                <td>ค่าสินค้าก่อนหักส่วนลด</td>
-                <td>4,2770.00</td>
+                <td>รวมเงิน</td>
+                <td class="no-border-right">ค่าสินค้าก่อนหักส่วนลด</td>
+                <td class="no-border-left text-end" id="value1"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ค่าขนส่ง</td>
-                <td>32</td>
+                <td></td>
+                <td class="no-border-right">ค่าขนส่ง</td>
+                <td class="no-border-left text-end" id="value2"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ราคารวมค่าสินค้าและค่าขนส่ง</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">ราคารวมค่าสินค้าและค่าขนส่ง</td>
+                <td class="no-border-left text-end" id="value3"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ส่วนลดค่าสินค้า</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">ส่วนลดค่าสินค้า</td>
+                <td class="no-border-left text-end" id="value4"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ส่วนลดค่าขนส่ง</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">ส่วนลดค่าขนส่ง</td>
+                <td class="no-border-left text-end" id="value5"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>รวมส่วนลด</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">รวมส่วนลด</td>
+                <td class="no-border-left text-end" id="value6"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ค่าสินค้าหลังหักส่วนลด</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">ค่าสินค้าหลังหักส่วนลด</td>
+                <td class="no-border-left text-end" id="value7"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ค่าส่งหลังหักส่วนลด</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">ค่าส่งหลังหักส่วนลด</td>
+                <td class="no-border-left text-end" id="value8"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</td>
+                <td class="no-border-left text-end" id="value9"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ภาษีมูลค่าเพิ่ม 7%</td>
-                <td>41</td>
+                <td></td>
+                <td class="no-border-right">ภาษีมูลค่าเพิ่ม 7%</td>
+                <td class="no-border-left text-end" id="value10"></td>
               </tr>
               <tr>
-                <td class="line-calculate"></td>
-                <td>ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</td>
-                <td >41</td>
+                <td></td>
+                <td class="no-border-right">ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</td>
+                <td class="no-border-left text-end" id="value11"></td>
               </tr>
             </table>
           </div>

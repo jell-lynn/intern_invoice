@@ -1,9 +1,9 @@
-@import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
+/* @import "https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap";
 * {
   margin: 0 auto;
   padding: 0 auto;
   user-select: none;
-}
+} */
 
 
 body {
@@ -59,8 +59,8 @@ body {
 .invoice-information-talaadthai {
   padding-top: 0.5cm;
   padding-right: 0.5cm;
-  float: right; 
-  text-align: right; 
+  /* float: right;  */
+  /* text-align: right;  */
 }
 
 .wrapper-invoice .invoice .invoice-head {
@@ -117,12 +117,12 @@ th, td {
   overflow: hidden; 
 }
 
-#Quotation-info {
-  border-left: none;
+.no-border-right {
+  border-right: none;
 }
 
-#no-border-right {
-  border-right: none;
+.no-border-left {
+  border-left: none;
 }
 
 .wrapper-invoice .invoice .invoice-body .table tbody tr td {
@@ -211,6 +211,7 @@ th, td {
     display: none !important;
   }
 }
+
 
 .rtl {
   direction: rtl;
