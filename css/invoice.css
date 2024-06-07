@@ -124,7 +124,6 @@ th, td {
 
 } */
 .signature-form{
-  /* margin-top: 10px; */
   width: 100%;
   
 }
@@ -138,13 +137,17 @@ th, td {
   float: left;
   padding: 1px;
 }
+.signature2{
+  width: 8%;
+  float: right;
+  padding: 1px;
+}
 .underline{
   width: 13%;
   float: left;
   padding: 2px;
 }
-
-.underlines {
+.underlines{
   border-bottom: 1px solid  black; 
   width: 25%;
   float: left;
