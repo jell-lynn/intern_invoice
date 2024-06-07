@@ -1,290 +1,238 @@
 <!DOCTYPE html>
-<html lang="en, id">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
-  <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    /> -->
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Latest compiled and minified CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Latest compiled JavaScript -->
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
-
-
-  <link rel="stylesheet" href="./css/invoice.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="./css/invoice.css">
   <script src="./script.js"></script>
 </head>
 
 <body>
+  <button class="btn-print" type="button" onclick="window.print()">
+    <span class="material-symbols-outlined">
+      print
+    </span>
+  </button>
 
   <section class="wrapper-invoice">
-    <!-- switch mode rtl by adding class rtl on invoice class -->
     <div class="invoice">
-      <div class="invoice-information">
-        <div class="invoice-information-talaadthai">
-          <p>บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) <br>
-            118/1 อาคารทิปโก้ ทาวเวอร์ 2 ชั้นที่ 17 ถนนพระราม 6 <br>
-            แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 <br>
-            <!-- หาวิธีทำให้เลขไม่ static -->
-            เลขประจำตัวผู้เสียภาษี: 0105564108719 <br>
-        </div>
-
-
+      <div class="top-section">
+        <table style="width:100%;">
+          <tr>
+            <td style="text-align: center; width: 1vh;">
+              <img src="https://lh5.googleusercontent.com/d/16dKfWv3EhqkOJ9nKil93LWyp4bCSZjYd" width="200px" alt="Company Logo">
+            </td>
+            <td style="font-size: 12px; text-align: center;">
+              บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) <br>
+              118/1 อาคารทิปโก้ ทาวเวอร์ 2 ชั้นที่ 17 ถนนพระราม 6 <br>
+              แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 <br>
+              เลขประจำตัวผู้เสียภาษี: 0105564108719 <br>
+            </td>
+          </tr>
+        </table>
       </div>
 
-      <div class="invoice-logo-brand">
-        <!-- <h2>Tampsh.</h2> -->
-        <!-- <img src="./assets/image/tampsh.png" alt="" /> -->
-        <img src="https://lh5.googleusercontent.com/d/16dKfWv3EhqkOJ9nKil93LWyp4bCSZjYd" width="200px">
-      </div>
-      <!-- invoice head -->
-      <div class="invoice-head">
-        <div class="head client-data">
-        </div>
-      </div>
       <!-- invoice body-->
       <div class="invoice-body">
-        <table class="table">
-          <thead>
+        <div class="top-section-table">
+          <table style="width:100%; font-size: 10px;">
+            <thead>
               <tr>
-                  <th colspan="2">ใบเสนอราคา <br> Quatation </th>
-                  <th rowspan="2" id="doc-info" style="text-align: start;">วันที่ออกเอกสาร <br> เลขที่เอกสาร xxxxxx</th>
-                  <th rowspan="2" style="text-align: start;">วันที่ออกเอกสาร <br> เลขที่เอกสาร xxxxxx</th>
+                  <th colspan="2" rowspan="2" style="text-align: center;">ใบเสนอราคา<br>Quotation</th>
+                  <td class="text-start" id="doc-date"></td>
+              </tr>
+              <tr>
+                  <td class="text-start" id="doc-no"></td>
               </tr>
           </thead>
-          <tbody>
+            <tbody>
               <tr>
-                  <td id="no-border-right">Customer ID <br>
-                      ร้าน <br>
-                      นามบริษัท <br>
-                      สาขาที่ <br>
-                      สาขา <br>
-                      ที่อยู่ <br>
-                      เบอร์โทรศัพท์ <br>
-                      E-mail <br>
-                      เลขประจำตัวผู้เสียภาษี <br>
-                      ชื่อผู้ติดต่อ <br>
-                      โทรศัพท์ <br>
-                  </td>
-                  <td id="Quotation-info"></td>
-                  <td>Customer Group <div id="customer-gr"></div><br>
-                      หมายเหตุ <div id="note"></div><br>
-                      ระยะเวลาการเสนอราคา <div id="bid-period"></div> วัน นับจากวันที่ออกเอกสาร<br><br>
-                      ระยะเวลาการเสนอราคา <div id="bid-period"></div><br>
-                      เงื่อนไขการชำระเงิน : <div id="payment-term"></div><br>
-                      <div class="checkbox-container" id="payment-checkbox">
-                          <label class="checkbox-label">
-                          <input type="checkbox" name="payment" value="ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท">ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท<br>
-                          </label>
-
-                          <label class="checkbox-label">
-                          <input type="checkbox" name="payment" value="ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น">ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น<br>
-                          </label>
-
-                          <label class="checkbox-label">
-                          <input type="checkbox" name="payment" value="ชำระผ่านลิงค์การชำระเงิน">ชำระผ่านลิงค์การชำระเงิน
-                          </label>
-                      </div>
-                  </td>
+                <td class="no-border-right">Customer ID <br>
+                  ร้าน <br>
+                  นามบริษัท <br>
+                  สาขาที่ <br>
+                  สาขา <br>
+                  ที่อยู่ <br>
+                  เบอร์โทรศัพท์ <br>
+                  E-mail <br>
+                  เลขประจำตัวผู้เสียภาษี <br>
+                  ชื่อผู้ติดต่อ <br>
+                  โทรศัพท์ <br>
+                </td>
+                <td id="Quotation-info" class="no-border-left"></td>
+                <td style="vertical-align: top;">
+                  <div id="customer-gr"></div>
+                  <div id="note"></div>
+                  <div id="bid-period"></div>
+                  <div id="payment-term"></div><br>
+                  <div class="checkbox-container" id="payment-checkbox">
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="payment" value="ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท"> ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท
+                    </label><br>
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="payment" value="ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น"> ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น
+                    </label><br>
+                    <label class="checkbox-label">
+                      <input type="checkbox" name="payment" value="ชำระผ่านลิงค์การชำระเงิน"> ชำระผ่านลิงค์การชำระเงิน
+                    </label>
+                  </div>
+                </td>
               </tr>
-          </tbody>
-      </table>
-
-        <div class="divider-box">
-          <div class="divider"></div>
+            </tbody>
+          </table>
         </div>
 
-        <table class="table">
-          <thead>
-              <tr>
-                  <th style="width: 20px;">ลำดับ </th>
-                  <th>รหัส</th>
-                  <th style="width: 200px;">รายการ </th>
-                  <th>Vat <br> Item </th>
-                  <th>จำนวน</th>
-                  <th>หน่วย </th>
-                  <th>ราคาต่อหน่วย </th>
-                  <th>ส่วนลดต่อหน่วย</th>
-                  <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
-                  <th>ส่วนลดรวม</th>
-                  <th>ราคารวมหลังหักส่วนลด</th>
-                  <th>ราคาต่อหน่วย </th>
-                  <th>ภาษีมูลค่าเพิ่ม</th>
+        <div class="list-invoice">
+          <table style="width:100%; font-size: 10px;">
+            <thead>
+              <tr class="title-bill">
+                <th>ลำดับ </th>
+                <th>รหัส</th>
+                <th style="width: 200px;">รายการ </th>
+                <th>Vat <br> Item </th>
+                <th>จำนวน</th>
+                <th>หน่วย </th>
+                <th>ราคาต่อหน่วย </th>
+                <th>ส่วนลดต่อหน่วย</th>
+                <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
+                <th>ส่วนลดรวม</th>
+                <th>ราคารวมหลังหักส่วนลด</th>
+                <th>ราคาต่อหน่วย </th>
+                <th>ภาษีมูลค่าเพิ่ม</th>
               </tr>
-          </thead>
-          <tbody id="order-list">
-              <!--เพิ่มข้อมูลสินค้าลงทีนี้-->
-          </tbody>
-      </table>
+            </thead>
+            <tbody id="order-list"><!--เพิ่มรายการสินค้าทีนี้--></tbody>
+            <tfoot>
+              <tr id="total-items">
+                <!--เพิ่มรวมรายการ-->
+              </tr>
+            </tfoot>
+          </table>
+        </div>
 
-        <head>
-          <style>
-            table,
-            th,
-            td {
-              border: 1px solid black;
-              border-collapse: collapse;
-            }
-
-            th,
-            td {
-              padding: 5px;
-              text-align: left;
-            }
-
-            table#t01 {
-              width: 100%;
-              background-color: #f2f2d1;
-            }
-          </style>
-        </head>
-
-        <body>
-          <div class="calculate-invoice">
-            <table style="width:100%">
-                <td>รวมเงิน</td>
-                <td>ค่าสินค้าก่อนหักส่วนลด</td>
-                <td>4,2770.00</td>
-                <td id="value1"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ค่าขนส่ง</td>
-                <td>32</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ราคารวมค่าสินค้าและค่าขนส่ง</td>
-                <td>41</td>
-                <td id="value3"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ส่วนลดค่าสินค้า</td>
-                <td>41</td>
-                <td id="value4"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ส่วนลดค่าขนส่ง</td>
-                <td>41</td>
-                <td id="value5"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>รวมส่วนลด</td>
-                <td>41</td>
-                <td id="value6"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ค่าสินค้าหลังหักส่วนลด</td>
-                <td>41</td>
-                <td id="value7"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ค่าส่งหลังหักส่วนลด</td>
-
-                <td>41</td>
-                <td id="value8"></td>
-
-              </tr>
-              <tr>
-                <td></td>
-                <td>รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</td>
-                <td>41</td>
-                <td id="value9"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ภาษีมูลค่าเพิ่ม 7%</td>
-                <td>41</td>
-                <td id="value10"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</td>
-                <td>41</td>
-                <td id="value11"></td>
-              </tr>
-            </table>
+        <div class="calculate-invoice">
+          <table style="width:100%">
+            <td class="line-calculate no-border-left" style="width: 8%;">รวมเงิน</td>
+            <td class="no-border-right no-border-left">ค่าสินค้าก่อนหักส่วนลด</td>
+            <td class="no-border-left text-end" id="value1"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ค่าขนส่ง</td>
+              <td class="no-border-left text-end" id="value2"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ราคารวมค่าสินค้าและค่าขนส่ง</td>
+              <td class="no-border-left text-end" id="value3"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ส่วนลดค่าสินค้า</td>
+              <td class="no-border-left text-end" id="value4"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ส่วนลดค่าขนส่ง</td>
+              <td class="no-border-left text-end" id="value5"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">รวมส่วนลด</td>
+              <td class="no-border-left text-end" id="value6"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ค่าสินค้าหลังหักส่วนลด</td>
+              <td class="no-border-left text-end" id="value7"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ค่าส่งหลังหักส่วนลด</td>
+              <td class="no-border-left text-end" id="value8"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</td>
+              <td class="no-border-left text-end" id="value9"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ภาษีมูลค่าเพิ่ม 7%</td>
+              <td class="no-border-left text-end" id="value10"></td>
+            </tr>
+            <tr>
+              <td class="line-calculate no-border-left"></td>
+              <td class="no-border-right no-border-left">ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</td>
+              <td class="no-border-left text-end" id="value11"></td>
+            </tr>
+          </table>
+        </div>
+        
+        <div class="signature-form">
+          <p>จัดทำโดย</p>
+          <div class="underline" style="margin-left: 70px;"></div> <br>
+          <p>วันที่</p>
+          <div class="underline" style="margin-left: 91px;"></div> <br>
+          <p>เสนอราคาโดย</p>
+          <div class="underline" style="margin-left: 50px;"></div>
+          <p style="padding-left: 30px;">อนุมัติโดย</p>
+          <div class="underline" style="margin-left: 50px;"></div> <br>
+          <p>วันที่</p>
+          <div class="underline" style="margin-left: 91px;"></div>
+          <p style="padding-left: 30px;">วันที่</p>
+          <div class="underline" style="margin-left: 73px;"></div> <br>
+        </div>
+    
+        <!-- bottom form -->
+        <div class="bottom-form">
+          <div class="bottom-form1">
+            <div class="box">Code Setting only : </div>
           </div>
-          
-          <br />
-          <br />
-          <div class="signature-form">
-            <p>จัดทำโดย</p>
-            <div class="underline" style="margin-left: 70px;"></div> <br>
-            <p>วันที่</p>
-            <div class="underline" style="margin-left: 91px;"></div> <br>
-            <p>เสนอราคาโดย</p>
-            <div class="underline" style="margin-left: 50px;"></div>
-            <p style="padding-left: 30px;">อนุมัติโดย</p>
-            <div class="underline" style="margin-left: 50px;"></div> <br>
-            <p>วันที่</p>
-            <div class="underline" style="margin-left: 91px;"></div>
-            <p style="padding-left: 30px;">วันที่</p>
-            <div class="underline" style="margin-left: 73px;"></div> <br>
+          <div class="bottom-form2">
+            <div class="box">Vochure Code</div>
           </div>
-
-
-          <!-- bottom form -->
-          <div class="bottom-form">
-            <div class="bottom-form1">
-              <div class="box">Code Setting only : </div>
-            </div>
-            <div class="bottom-form2">
-              <div class="box">Vochure Code</div>
-            </div>
-            <div class="bottom-form3">
-              <div class="box">min</div>
-            </div>  
-            <div class="bottom-form4">
-              <div class="box">4,2770.00</div>
-            </div>
-            <div class="bottom-form5">
-              <div class="box">Product Disc</div>
-            </div>
-            <div class="bottom-form6">
-              <div class="box">100.00</div>
-            </div>
+          <div class="bottom-form3">
+            <div class="box">min</div>
           </div>
-
-          <div class="bottom-form">
-            <div class="bottom-form1">
-              <div class="box"></div>
-            </div>
-            <div class="bottom-form2">
-              <div class="box">Vochure Name</div>
-            </div>
-            <div class="bottom-form3">
-              <div class="box">Yole240419B001</div>
-            </div>  
-            <div class="bottom-form4">
-              <div class="box"></div>
-            </div>
-            <div class="bottom-form5">
-              <div class="box">Delivery Disc</div>
-            </div>
-            <div class="bottom-form6">
-              <div class="box">100.00</div>
-            </div>
+          <div class="bottom-form4">
+            <div class="box">4,2770.00</div>
           </div>
-
-
-        </body>
-
-
+          <div class="bottom-form5">
+            <div class="box">Product Disc</div>
+          </div>
+          <div class="bottom-form6">
+            <div class="box">100.00</div>
+          </div>
+        </div>
+    
+        <div class="bottom-form">
+          <div class="bottom-form1">
+            <div class="box"></div>
+          </div>
+          <div class="bottom-form2">
+            <div class="box">Vochure Name</div>
+          </div>
+          <div class="bottom-form3">
+            <div class="box">Yole240419B001</div>
+          </div>
+          <div class="bottom-form4">
+            <div class="box"></div>
+          </div>
+          <div class="bottom-form5">
+            <div class="box">Delivery Disc</div>
+          </div>
+          <div class="bottom-form6">
+            <div class="box">100.00</div>
+          </div>
+        </div>
+      </div>
+    </div> 
   </section>
 </body>
-
 </html>
