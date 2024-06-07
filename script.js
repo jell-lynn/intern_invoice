@@ -60,6 +60,16 @@ function fetchJSONData() {
                     // เพิ่มแถวลงใน tbody
                     order_list.innerHTML = rows;
         })
+  
+            //ส่วนราคารวมสินค้า
+            Object.entries(data["Total Price"]).forEach(([key, value], index) => {
+                let cell = document.getElementById(`value${index+1}`)
+                if (cell) {
+                    cell.innerHTML = value;
+                }
+            });
+        }
+    )
         .catch((error) => {
             console.error("Unable to fetch data:", error);
         });
