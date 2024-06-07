@@ -18,15 +18,13 @@
   <!-- Latest compiled JavaScript -->
   <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
 
-
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./css/invoice.css" />
   <script src="./script.js"></script>
 </head>
 
 <body>
-
   <section class="wrapper-invoice">
-    <!-- switch mode rtl by adding class rtl on invoice class -->
     <div class="invoice">
       <div class="invoice-information">
         <div class="invoice-information-talaadthai">
@@ -35,18 +33,12 @@
             แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400 <br>
             เลขประจำตัวผู้เสียภาษี: 0105564108719 <br>
         </div>
-
-
       </div>
-
+      
       <div class="invoice-logo-brand">
         <img src="https://lh5.googleusercontent.com/d/16dKfWv3EhqkOJ9nKil93LWyp4bCSZjYd" width="200px">
       </div>
-      <!-- invoice head -->
-      <div class="invoice-head">
-        <div class="head client-data">
-        </div>
-      </div>
+
       <!-- invoice body-->
       <div class="invoice-body">
         <table class="table">
@@ -70,7 +62,7 @@
                       ชื่อผู้ติดต่อ <br>
                       โทรศัพท์ <br>
                   </td>
-                  <td id="Quotation-info"></td>
+                  <td id="Quotation-info"></td> <!--เพิ่มข้อมูลลูกค้าตรงนี้-->
                   <td>Customer Group <div id="customer-gr"></div><br>
                       หมายเหตุ <div id="note"></div><br>
                       ระยะเวลาการเสนอราคา <div id="bid-period"></div><br>
@@ -147,7 +139,7 @@
             <table style="width:100%">
                 <td>รวมเงิน</td>
                 <td>ค่าสินค้าก่อนหักส่วนลด</td>
-                <td id="value1"></td>
+                <td id="value1"></td> <!--เพิ่มช้อมูลลใน id="value[n]"-->
               </tr>
               <tr>
                 <td></td>
@@ -265,12 +257,24 @@
 
 
         </body>
-
-
   </section>
-  <div class="copyright">
-    <p>Created by </p>
+  <!-- Add more fields as needed -->
+  <div class="card-footer text-muted">
+    <div class="text-center">
+        <button class="btn btn-primary mr-2 noprint" onclick="saveAsPDF()">บันทึกเป็น PDF</button>
+        <button class="btn btn-success noprint" onclick="printDocument()">พิมพ์</button>
+    </div>
   </div>
+
+  <script>
+    function saveAsPDF() {
+      window.print();
+    }
+    
+    function printDocument() {
+      window.print();
+    }
+  </script>
 </body>
 
 </html>

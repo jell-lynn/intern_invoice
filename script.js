@@ -62,9 +62,8 @@ function fetchJSONData() {
                 if (cell) {
                     cell.innerHTML = value;
                 }
-            });
-        }
-    )
+            }); 
+        })
         .catch((error) => {
             console.error("Unable to fetch data:", error);
         });

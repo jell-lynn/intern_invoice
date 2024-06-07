@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <style>
+        @page {
+            size: A4;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="row  text-center" id="logo">
+                <div class="col-sm-6">
+                    <img src="https://lh5.googleusercontent.com/d/16dKfWv3EhqkOJ9nKil93LWyp4bCSZjYd" width="300px">
+                </div>
+                <div class="col-sm-6" id="fresh-address">
+                    <p>บริษัท เฟรช คอมเมิร์ซ จำกัด (สำนักงานใหญ่) <br>
+                    118/1 อาคารทิปโก้ ทาวเวอร์ 2 ชั้นที่ 17 ถนนพระราม 6  <br>
+                    แขวงพญาไท เขตพญาไท กรุงเทพมหานคร 10400  <br>
+                    เลขประจำตัวผู้เสียภาษี: 0105564108719</p>
+                </div>
+            </div>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th colspan="2" class="text-center">ใบเสนอราคา <br> Quatation </th>
+                        <th rowspan="2" style="text-align: start;">วันที่ออกเอกสาร <br> เลขที่เอกสาร xxxxxx</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td id="no-border-right">Customer ID <br>
+                            ร้าน <br>
+                            นามบริษัท <br>
+                            สาขาที่ <br>
+                            สาขา <br>
+                            ที่อยู่ <br>
+                            เบอร์โทรศัพท์ <br>
+                            E-mail <br>
+                            เลขประจำตัวผู้เสียภาษี <br>
+                            ชื่อผู้ติดต่อ <br>
+                            โทรศัพท์ <br>
+                        </td>
+                        <td id="Quotation-info"></td> <!--เพิ่มข้อมูลลูกค้าตรงนี้-->
+                        <td>Customer Group <div id="customer-gr"></div><br>
+                            หมายเหตุ <div id="note"></div><br>
+                            ระยะเวลาการเสนอราคา <div id="bid-period"></div><br>
+                            เงื่อนไขการชำระเงิน : <div id="payment-term"></div><br>
+                            <div class="checkbox-container" id="payment-checkbox">
+                                <label class="checkbox-label">
+                                <input type="checkbox" name="payment" value="ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท">ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท<br>
+                                </label>
+      
+                                <label class="checkbox-label">
+                                <input type="checkbox" name="payment" value="ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น">ชำระผ่านเครดิตการ์ดหน้าแอพลิเคชั่น<br>
+                                </label>
+      
+                                <label class="checkbox-label">
+                                <input type="checkbox" name="payment" value="ชำระผ่านลิงค์การชำระเงิน">ชำระผ่านลิงค์การชำระเงิน
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+        
+        <section>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 20px;">ลำดับ </th>
+                                <th>รหัส</th>
+                                <th style="width: 200px;">รายการ </th>
+                                <th>Vat <br> Item </th>
+                                <th>จำนวน</th>
+                                <th>หน่วย </th>
+                                <th>ราคาต่อหน่วย </th>
+                                <th>ส่วนลดต่อหน่วย</th>
+                                <th>ราคาต่อหน่วยหลังหักส่วนลด </th>
+                                <th>ส่วนลดรวม</th>
+                                <th>ราคารวมหลังหักส่วนลด</th>
+                                <th>ราคาต่อหน่วย </th>
+                                <th>ภาษีมูลค่าเพิ่ม</th>
+                            </tr>
+                        </thead>
+                        <tbody id="order-list">
+                            <!--เพิ่มข้อมูลสินค้าลงทีนี้-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <table style="width:100%" class="table-bordered">
+                <td>รวมเงิน</td>
+                <td>ค่าสินค้าก่อนหักส่วนลด</td>
+                <td id="value1"></td> <!--เพิ่มช้อมูลลใน id="value[n]"-->
+              </tr>
+              <tr>
+                <td></td>
+                <td>ค่าขนส่ง</td>
+                <td id="value2"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ราคารวมค่าสินค้าและค่าขนส่ง</td>
+                <td id="value3"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ส่วนลดค่าสินค้า</td>
+                <td id="value4"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ส่วนลดค่าขนส่ง</td>
+                <td id="value5"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>รวมส่วนลด</td>
+                <td id="value6"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ค่าสินค้าหลังหักส่วนลด</td>
+                <td id="value7"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ค่าส่งหลังหักส่วนลด</td>
+                <td id="value8"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</td>
+                <td id="value9"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ภาษีมูลค่าเพิ่ม 7%</td>
+                <td id="value10"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</td>
+                <td id="value11"></td>
+              </tr>
+            </table>
+        </footer>
+
+        <!--ปุ่มปริ้น-->
+        <div class="card-footer text-muted">
+            <div class="text-center">
+                <button class="btn btn-primary mr-2 noprint" onclick="saveAsPDF()">บันทึกเป็น PDF</button>
+                <button class="btn btn-success noprint" onclick="printDocument()">พิมพ์</button>
+            </div>
+          </div>
+        
+          <script>
+            function saveAsPDF() {
+              window.print();
+            }
+            
+            function printDocument() {
+              window.print();
+            }
+          </script>
+    </div>
+
+</body>
+
+</html>
