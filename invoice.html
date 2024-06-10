@@ -8,6 +8,7 @@
   <!-- Latest compiled and minified CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link href='https://fonts.googleapis.com/css?family=Chakra Petch' rel='stylesheet'>
   <link rel="stylesheet" href="./css/invoice.css">
   <script src="./script.js"></script>
 </head>
@@ -52,7 +53,7 @@
           </thead>
             <tbody>
               <tr>
-                <td class="no-border-right">Customer ID <br>
+                <td class="no-border-right" style="font-family: 'Chakra Petch';"><b>Customer ID <br>
                   ร้าน <br>
                   นามบริษัท <br>
                   สาขาที่ <br>
@@ -62,15 +63,15 @@
                   E-mail <br>
                   เลขประจำตัวผู้เสียภาษี <br>
                   ชื่อผู้ติดต่อ <br>
-                  โทรศัพท์ <br>
+                  โทรศัพท์ </b><br>
                 </td>
-                <td id="Quotation-info" class="no-border-left"></td>
+                <td id="Quotation-info" class="no-border-left" style="font-family: 'Chakra Petch';"></td>
                 <td style="vertical-align: top;">
                   <div id="customer-gr"></div>
                   <div id="note"></div>
                   <div id="bid-period"></div>
                   <div id="payment-term"></div><br>
-                  <div class="checkbox-container" id="payment-checkbox">
+                  <div class="checkbox-container" id="payment-checkbox" style="color: blue;">
                     <label class="checkbox-label">
                       <input type="checkbox" name="payment" value="ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท"> ชำระผ่านการโอนเงินเข้าบัญชีธนาคารบริษัท
                     </label><br>
@@ -93,7 +94,7 @@
               <tr class="title-bill">
                 <th>ลำดับ </th>
                 <th>รหัส</th>
-                <th style="width: 200px;">รายการ </th>
+                <th style="width: 150px;">รายการ </th>
                 <th>Vat <br> Item </th>
                 <th>จำนวน</th>
                 <th>หน่วย </th>
@@ -115,66 +116,67 @@
           </table>
         </div>
 
-        <div class="calculate-invoice">
+        <div class="calculate-invoice" style="font-size: 10px;">
           <table style="width:100%">
-            <td class="line-calculate no-border-left" style="width: 8%;">รวมเงิน</td>
-            <td class="no-border-right no-border-left">ค่าสินค้าก่อนหักส่วนลด</td>
+            <tr>
+            <td class="line-calculate no-border-left" style="width: 8%;"><b>รวมเงิน</b></td>
+            <td class="no-border-right no-border-left"><b>ค่าสินค้าก่อนหักส่วนลด</b></td>
             <td class="no-border-left text-end" id="value1"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ค่าขนส่ง</td>
+              <td class="no-border-right no-border-left"><b>ค่าขนส่ง</b></td>
               <td class="no-border-left text-end" id="value2"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ราคารวมค่าสินค้าและค่าขนส่ง</td>
+              <td class="no-border-right no-border-left"><b>ราคารวมค่าสินค้าและค่าขนส่ง</b></td>
               <td class="no-border-left text-end" id="value3"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ส่วนลดค่าสินค้า</td>
+              <td class="no-border-right no-border-left" style="color: red;"><b>ส่วนลดค่าสินค้า</b></td>
               <td class="no-border-left text-end" id="value4"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ส่วนลดค่าขนส่ง</td>
+              <td class="no-border-right no-border-left" style="color: red;"><b>ส่วนลดค่าขนส่ง</b></td>
               <td class="no-border-left text-end" id="value5"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">รวมส่วนลด</td>
+              <td class="no-border-right no-border-left"><b>รวมส่วนลด</b></td>
               <td class="no-border-left text-end" id="value6"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ค่าสินค้าหลังหักส่วนลด</td>
+              <td class="no-border-right no-border-left"><b>ค่าสินค้าหลังหักส่วนลด</b></td>
               <td class="no-border-left text-end" id="value7"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ค่าส่งหลังหักส่วนลด</td>
+              <td class="no-border-right no-border-left"><b>ค่าส่งหลังหักส่วนลด</b></td>
               <td class="no-border-left text-end" id="value8"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</td>
+              <td class="no-border-right no-border-left"><b>รวมเงินหักหลังส่วนลดก่อนภาษีมูลค่าเพิ่ม</b></td>
               <td class="no-border-left text-end" id="value9"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ภาษีมูลค่าเพิ่ม 7%</td>
+              <td class="no-border-right no-border-left"><b>ภาษีมูลค่าเพิ่ม 7%</b></td>
               <td class="no-border-left text-end" id="value10"></td>
             </tr>
             <tr>
               <td class="line-calculate no-border-left"></td>
-              <td class="no-border-right no-border-left">ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</td>
+              <td class="no-border-right no-border-left"><b>ค่าสินค้าและค่าส่งหลังภาษีมูลค่าเพิ่ม</b></td>
               <td class="no-border-left text-end" id="value11"></td>
             </tr>
           </table>
         </div>
         
-        <div class="signature-form">
+        <!-- <div class="signature-form">
           <p>จัดทำโดย</p>
           <div class="underline" style="margin-left: 70px;"></div> <br>
           <p>วันที่</p>
@@ -187,52 +189,70 @@
           <div class="underline" style="margin-left: 91px;"></div>
           <p style="padding-left: 30px;">วันที่</p>
           <div class="underline" style="margin-left: 73px;"></div> <br>
+        </div> -->
+
+        <div class="signature-form" style="font-size: 10px;">
+          <div class="row">
+            <div class="col-sm-2" style="width: 100px;">เสนอราคาโดย</div>
+            <div class="col-sm-3"><p></p><hr><p class="text-center" id="name-offer" style="margin-top: -15px;">Unchitta Aryuyong</p></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2" style="width: 100px;">อนุมัติโดย</div>
+            <div class="col-sm-3"><p></p><hr><p class="text-center" id="name-approve" style="margin-top: -15px;">Unchitta Aryuyong</p></div>
+          </div>
+          <div class="row">
+            <div class="col-sm-2" style="width: 100px;">วันที่</div>
+            <div class="col-sm-3"><p class="text-center" id="date-offer" style="margin-bottom: -15px;"></p><hr></div>
+            <div class="col-sm-1"></div>
+            <div class="col-sm-2" style="width: 100px;">วันที่</div>
+            <div class="col-sm-3"><p class="text-center" id="date-approve" style="margin-bottom: -15px;"></p><hr></div>
+          </div>
         </div>
-    
+
         <!-- bottom form -->
-        <div class="bottom-form">
-          <div class="bottom-form1">
-            <div class="box">Code Setting only : </div>
+        <div class="bottom-invoice">
+          <div class="bottom-form">
+            <div class="bottom-form1">
+              <div class="box">Code Setting only : </div>
+            </div>
+            <div class="bottom-form2">
+              <div class="box">Vochure Code</div>
+            </div>
+            <div class="bottom-form3">
+              <div class="box" id="vochure-code"></div>
+            </div>
+            <div class="bottom-form4">
+              <div class="box" id="price-before-dis"></div>
+            </div>
+            <div class="bottom-form5">
+              <div class="box">Product Disc</div>
+            </div>
+            <div class="bottom-form6">
+              <div class="box" id="product-dis"></div>
+            </div>
           </div>
-          <div class="bottom-form2">
-            <div class="box">Vochure Code</div>
-          </div>
-          <div class="bottom-form3">
-            <div class="box">min</div>
-          </div>
-          <div class="bottom-form4">
-            <div class="box">4,2770.00</div>
-          </div>
-          <div class="bottom-form5">
-            <div class="box">Product Disc</div>
-          </div>
-          <div class="bottom-form6">
-            <div class="box">100.00</div>
-          </div>
-        </div>
     
-        <div class="bottom-form">
-          <div class="bottom-form1">
-            <div class="box"></div>
+          <div class="bottom-form">
+            <div class="bottom-form1">
+              <div class="box"></div>
+            </div>
+            <div class="bottom-form2">
+              <div class="box">Vochure Name</div>
+            </div>
+            <div class="bottom-form3">
+              <div class="box" id="vochure-name"></div>
+            </div>
+            <div class="bottom-form4">
+              <div class="box"></div>
+            </div>
+            <div class="bottom-form5">
+              <div class="box">Delivery Disc</div>
+            </div>
+            <div class="bottom-form6">
+              <div class="box" id="delivery-dis"></div>
+            </div>
           </div>
-          <div class="bottom-form2">
-            <div class="box">Vochure Name</div>
-          </div>
-          <div class="bottom-form3">
-            <div class="box">Yole240419B001</div>
-          </div>
-          <div class="bottom-form4">
-            <div class="box"></div>
-          </div>
-          <div class="bottom-form5">
-            <div class="box">Delivery Disc</div>
-          </div>
-          <div class="bottom-form6">
-            <div class="box">100.00</div>
           </div>
         </div>
-      </div>
-    </div> 
   </section>
 </body>
 </html>

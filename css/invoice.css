@@ -12,6 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: #dcdcdc;
 }
+
 .btn-print{
   width: 40px;
   height: 40px;
@@ -27,6 +28,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 .wrapper-invoice .invoice {
   background: white;
   width: 21cm;
@@ -35,152 +37,6 @@ body {
   margin: 0 auto;
   margin-bottom: 0.5cm;
 }
-
-/* .wrapper-invoice .invoice .invoice-information {
-  float: right;
-  text-align: right;
-}
-.wrapper-invoice .invoice .invoice-information b {
-  color: "#0F172A";
-}
-.wrapper-invoice .invoice .invoice-information p {
-  font-size: 0.5cm;
-  color: rgb(44, 44, 44);
-} */
-.invoice-image-talaadthai {
-  width: 64px;
-  height: 64px;
-  position: absolute;
-/* overflow: hidden; */
-  top: 0; 
-  left:0; 
-}
-
-.invoice-information-talaadthai {
-  padding-top: 0.5cm;
-  padding-right: 0.5cm;
-  /* float: right;  */
-  /* text-align: right;  */
-}
-
-.wrapper-invoice .invoice .invoice-head {
-  display: flex;
-  margin-top: 8vh;
-}
-
-.wrapper-invoice .invoice .invoice-head .client-info {
-  text-align: left;
-}
-.wrapper-invoice .invoice .invoice-head .client-info h2 {
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  font-size: 2vh;
-  color: "#0F172A";
-}
-.wrapper-invoice .invoice .invoice-head .client-info p {
-  font-size: 2vh;
-  color: gray;
-}
-.wrapper-invoice .invoice .invoice-head .client-data {
-  text-align: right;
-}
-.wrapper-invoice .invoice .invoice-head .client-data h2 {
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  font-size: 2vh;
-  color: "#0F172A";
-}
-.wrapper-invoice .invoice .invoice-head .client-data p {
-  font-size: 2vh;
-  color: gray;
-}
-.wrapper-invoice .invoice .invoice-body {
-  margin-top: 1vh;
-}
-.wrapper-invoice .invoice .invoice-body .table {
-  border-collapse: collapse;
-  width: 100%;
-}
-.wrapper-invoice .invoice .invoice-body .table thead tr th {
-  font-size: 1.2vh;
-  border: 1px solid #dcdcdc;
-
-  padding: 1vh;
-  background-color: #eeeeee;
-}
-.list-invoice{
-  margin-bottom: 1vh; 
-}
-
-
-th, td {
-  overflow: hidden; 
-}
-
-.wrapper-invoice .invoice .invoice-body .table tbody tr td {
-  font-size: 1.1vh;
-  border: 1px solid #dcdcdc;
-  text-align: left;
-  padding: 1vh;
-  background-color: #fff;
-
-  
-}
-.wrapper-invoice .invoice .invoice-body .table tbody tr td:nth-child(2) {
-  /* text-align: right; */
-  vertical-align: top;
-}
-.wrapper-invoice .invoice .invoice-body .flex-table {
-  display: flex;
-}
-.wrapper-invoice .invoice .invoice-body .flex-table .flex-column {
-  width: 100%;
-  box-sizing: border-box;
-}
-.wrapper-invoice .invoice .invoice-body .flex-table .flex-column .table-subtotal {
-  border-collapse: collapse;
-  box-sizing: border-box;
-  width: 100%;
-  margin-top: 2vh;
-}
-.wrapper-invoice .invoice .invoice-body .flex-table .flex-column .table-subtotal tbody tr td {
-  font-size: 2vh;
-  border-bottom: 1px solid #dcdcdc;
-  text-align: left;
-  padding: 1vh;
-  background-color: #fff;
-}
-.wrapper-invoice .invoice .invoice-body .flex-table .flex-column .table-subtotal tbody tr td:nth-child(2) {
-  text-align: right;
-}
-
-.wrapper-invoice .invoice .invoice-body .invoice-total-amount {
-  margin-top: 1rem;
-}
-.wrapper-invoice .invoice .invoice-body .invoice-total-amount p {
-  font-weight: bold;
-  color: "#0F172A";
-  text-align: right;
-  font-size: 2vh;
-}
-.wrapper-invoice .invoice .invoice-footer {
-  margin-top: 4vh;
-}
-.wrapper-invoice .invoice .invoice-footer p {
-  font-size: 1.7vh;
-  color: gray;
-}
-
-.copyright {
-  margin-top: 2rem;
-  text-align: center;
-}
-.copyright p {
-  color: gray;
-  font-size: 1.8vh;
-}
-
-
 
 @media print {
   html, body {
@@ -205,40 +61,6 @@ th, td {
 }
 
 
-.rtl {
-  direction: rtl;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-.rtl .invoice-information {
-  float: left !important;
-  text-align: left !important;
-}
-.rtl .invoice-head .client-info {
-  text-align: right !important;
-}
-.rtl .invoice-head .client-data {
-  text-align: left !important;
-}
-.rtl .invoice-body .table thead tr th {
-  text-align: right !important;
-}
-.rtl .invoice-body .table tbody tr td {
-  text-align: right !important;
-}
-.rtl .invoice-body .table tbody tr td:nth-child(2) {
-  text-align: left !important;
-}
-.rtl .invoice-body .flex-table .flex-column .table-subtotal tbody tr td {
-  text-align: right !important;
-}
-.rtl .invoice-body .flex-table .flex-column .table-subtotal tbody tr td:nth-child(2) {
-  text-align: left !important;
-}
-.rtl .invoice-body .invoice-total-amount p {
-  text-align: left !important;
-}
-
-
 /* calculate-invoice */
 .calculate-invoice{
   font-size: 10px;
@@ -249,19 +71,12 @@ th, td {
 .line-calculate {
   border: none; 
 }
-
-
-
-/* ด้านล่างสุด */
-.signature-form p {
-  padding-left: 10px;
-  font-size: 10px;
-  text-align: left;
-  display: inline;
-
+.calculate-invoice{
+  margin-top: 1vh;
 }
+
 .underline {
-  width: 250px; 
+  width: 200px; 
   border-bottom: 1px solid  black; 
   /* margin-left: 50px; */
   display: inline-block;
@@ -280,41 +95,58 @@ th, td {
 }
 
 
+/* bottom form */
+.bottom-invoice {
+  margin-top: 3vh;
+  width: 100%;
+  border: 0.5px solid black; 
+  box-sizing: border-box; 
+  padding: 1px; 
+}
+
 .bottom-form{
   font-size: 10px;
+  display: flex; 
+  flex-wrap: wrap; 
+
 }
 .bottom-form1{
   width: 56%;
   float: left;
-  padding: 15px;
+  padding: 2px;
 }
 
 .bottom-form2{
   width: 13%;
   float: left;
-  padding: 15px;
+  padding: 2px;
 }
 .bottom-form3{
   width: 4%;
   float: left;
-  padding: 15px;
+  padding: 2px;
 }
 .bottom-form4{
   width: 7%;
   float: left;
-  padding: 15px;
+  padding: 2px;
 }
 .bottom-form5{
   width: 13%;
   float: left;
-  padding: 15px;
+  padding: 2px;
 }
 
 .bottom-form6{
   width: 5%;
   float: left;
-  padding: 15px;
+  padding: 2px;
 }
+
+.signature-form {
+  margin-top: 3vh;
+}
+
 
 .list-invoice {
   margin-top: 1vh;
@@ -361,3 +193,25 @@ table#t01 {
   text-align: center;
   background-color: rgb(238, 238, 238);
 }
+
+.list-invoice tr{
+  line-height: 1.2;
+}
+
+.list-invoice tbody tr:not(:last-child) td {
+  border-top: none;
+  border-bottom: none;
+}
+
+.list-invoice tbody tr:last-child td {
+  border-bottom: 1px solid black;
+}
+
+.signature-form {
+  padding: 10px;
+}
+
+.signature-form hr {
+  color: black;
+}
+

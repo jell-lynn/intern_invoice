@@ -16,7 +16,6 @@
             "Contact_Name":"Khun Matt Tangpaosak",
             "Phone":"0936919197"
         },
-        "Doc_Date":"4/19/2024",
         "Doc_No":"240424B001",
         "payment":{
             "Customer_Group":"B2B Special Price : Drinks & Dessert",
@@ -126,8 +125,7 @@
     },
     "Sign":{
         "Offer_by":"Warinthip Sainara",
-        "Approved_by":"Maneesap Rojdamrongratana",
-        "Date_sign":"4/19/2024"
+        "Approved_by":"Maneesap Rojdamrongratana"
     },
     "CodeSetting":{
         "Vochure_Code":"Min",
