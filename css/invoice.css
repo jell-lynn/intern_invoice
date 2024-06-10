@@ -20,12 +20,13 @@
   }
 }
 
+
 body {
   padding: 20px;
-  font-family: "Inter";
+  -webkit-font-smoothing: antialiased;
   background-color: #dcdcdc;
 }
-
+/* print button */
 .btn-print{
   width: 40px;
   height: 40px;
@@ -33,138 +34,114 @@ body {
   border: none;
 }
 
+/* table */
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 5px;
+  text-align: left;
+}
+
+table#t01 {
+  width: 100%;
+  background-color: #f2f2d1;
+}
+
+.top-section table {
+  border-collapse: collapse;
+}
+
+.top-section table,
+.top-section th,
+.top-section td {
+  border: none;
+}
+
+.no-border-right {
+  border-right: none;
+}
+
+.no-border-left {
+  border-left: none;
+}
+
+/* invoice */
+
+/* .wrapper-invoice {
+  display: flex;
+  justify-content: center;
+} */
 
 .wrapper-invoice {
   background: white;
   width: 21cm;
   height: 29.7cm;
-  /* display: block; */
+  display: block;
   margin: 0 auto;
   margin-bottom: 0.5cm;
 }
-.invoice-information {
-  display: flex;
+
+/* list */
+.list-invoice {
+  margin-top: 1vh;
 }
-/* .information-talaadthai {
-  width: 50%;
+.list-invoice tr{
+  line-height: 1.2;
+}
+.list-invoice tbody tr:not(:last-child) td {
+  border-top: none;
+  border-bottom: none;
+}
+/* .title-bill th {
+  text-align: center;
+  background-color: rgb(238, 238, 238);
 } */
 
-.image-logo {
-  width: 40%;
-  text-align: right; 
-}
-.information-talaadthai p {
-  margin-top: 10px;
-  margin-left: 30px;
-  /* font-size: 11px; */
-}
-
-
-.tables{
-  width: 100%;
-  margin-bottom: 7px;
-  border-collapse: collapse;
-}
-.tables thead tr th {
-  font-size: 10px;
-  border: 1px solid black;
-  text-align: center;
-}
-.tables tbody tr td {
-  font-size: 10px;
-}
-
-
-.list-invoice{
-  margin-bottom: 1vh; 
-}
-
-th, td {
-  overflow: hidden; 
-}
-
-/* ลบเส้นขอบของตาราง */
-.no-border-right {
-  border-right: none;
-}
-.no-border-left {
-  border-left: none;
-}
-.tables tbody tr td {
-  text-align: left;
+.list-invoice tbody tr:last-child td {
+  border-bottom: 1px solid black;
 }
 
 /* calculate-invoice */
-.calculate-invoice{
-  font-size: 12px;
-}
+
+/* .calculate-invoice{
+  font-size: 10px;
+} */
+
 .calculate-invoice tr {
-  line-height: 0.7; 
+  line-height: 0.5; 
 }
 .line-calculate {
   border: none; 
 }
-/* ส่วนลายเซน */
-/* .signature-form{
-  display: flex;
+.calculate-invoice{
+  margin-top: 1vh;
 }
-.signature p{
-  display: inline;
-  
+
+/* sign */
+.signature-form {
+  margin-top: 15px;
 }
 .signature-form p {
   padding-left: 10px;
   font-size: 10px;
-  text-align: left;
+  /* text-align: left; */
   display: inline;
-}
-.signature-container {
-  display: grid;
-  grid-template-columns: 20%  auto 80% ;
 
-} */
-.signature-form{
-  width: 100%;
-  
 }
-.signature-container{
-  font-size: 10px;
-  display: flex; 
-  flex-wrap: wrap; 
-}
-.signature1{
-  width: 8%;
-  float: left;
-  padding: 1px;
-}
-.signature2{
-  width: 8%;
-  float: right;
-  padding: 1px;
-}
-.underline{
-  width: 13%;
-  float: left;
-  padding: 2px;
-}
-.underlines{
+.underline {
+  width: 250px; 
   border-bottom: 1px solid  black; 
-  width: 25%;
-  float: left;
-  padding: 2px;
-}
+  /* margin-left: 50px; */
+  display: inline-block;
 
-.full-width-box {
-  width: auto; 
-  height: auto; 
-  border: 1px solid black; 
-  box-sizing: border-box; 
-  margin: 20px 0; 
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
-
+/* bottom form */
 .bottom-invoice {
   margin-top: 10px;
   width: 100%;
@@ -211,4 +188,3 @@ th, td {
   float: left;
   padding: 2px;
 }
-
