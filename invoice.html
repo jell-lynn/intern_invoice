@@ -223,16 +223,16 @@
               <div class="box">Vochure Code</div>
             </div>
             <div class="bottom-form3">
-              <div class="box">min</div>
+              <div class="box" id="Vochure_Code"></div>
             </div>
-            <div class="bottom-form4">
-              <div class="box">4,2770.00</div>
+            <div class="bottom-form4" >
+              <div class="box"></div>
             </div>
             <div class="bottom-form5">
               <div class="box">Product Disc</div>
             </div>
             <div class="bottom-form6">
-              <div class="box">100.00</div>
+              <div class="box" id="Product_Disc"></div>
             </div>
           </div>
 
@@ -244,7 +244,7 @@
               <div class="box">Vochure Name</div>
             </div>
             <div class="bottom-form3">
-              <div class="box">Yole240419B001</div>
+              <div class="box" id="Vochure_Name"></div>
             </div>
             <div class="bottom-form4">
               <div class="box"></div>
@@ -253,28 +253,9 @@
               <div class="box">Delivery Disc</div>
             </div>
             <div class="bottom-form6">
-              <div class="box">100.00</div>
+              <div class="box" id="Delivery_Disc"></div>
             </div>
           </div>
-
-          <script>
-            function getCurrentDate() {
-              const months = [
-                "January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-              ];
-              const currentDate = new Date();
-              const day = currentDate.getDate();
-              const monthIndex = currentDate.getMonth();
-              const year = currentDate.getFullYear() + 543; // Convert to Thai Buddhist Era (B.E.)
-
-              const thaiMonth = months[monthIndex];
-              return `${day} ${thaiMonth} ${year}`;
-            }
-            // Display current date
-            const currentDateElement = document.getElementById('currentDate');
-            currentDateElement.textContent = getCurrentDate();
-          </script>
         </div>
       </div>
   </section>

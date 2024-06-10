@@ -69,7 +69,6 @@ function fetchJSONData() {
 
             // ส่วนรวมรายการ
             const total_items = data["Orderlist"]["Total_items"];
-
             const Total_price_before_disc = parseStringToFloatWithDecimal(total_items.Total_price_before_disc, 2);
             const Total_discount = parseStringToFloatWithDecimal(total_items.Total_discount, 2);
             const Total_price_after_disc = parseStringToFloatWithDecimal(total_items.Total_price_after_disc, 2);
@@ -93,6 +92,15 @@ function fetchJSONData() {
                     cell.innerHTML = value;
                 }
             });
+            // CodeSetting 
+            const CodeSetting = data["CodeSetting"];
+            const Product_Disc = parseStringToFloatWithDecimal(CodeSetting.Product_Disc, 2);
+            const Delivery_Disc = parseStringToFloatWithDecimal(CodeSetting.Delivery_Disc, 2);
+
+            document.getElementById('Vochure_Code').innerHTML = ` ${data["CodeSetting"]["Vochure_Code"]}`;
+            document.getElementById('Vochure_Name').innerHTML = ` ${data["CodeSetting"]["Vochure_Name"]}`;
+            document.getElementById('Product_Disc').innerHTML = ` ${Product_Disc}`;
+            document.getElementById('Delivery_Disc').innerHTML = ` ${Delivery_Disc}`;
         })
         .catch((error) => {
             console.error("Unable to fetch data:", error);
