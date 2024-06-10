@@ -126,21 +126,36 @@ table#t01 {
 /* sign */
 .signature-form {
   margin-top: 15px;
+
 }
 .signature-form p {
   padding-left: 10px;
   font-size: 10px;
   /* text-align: left; */
   display: inline;
-
 }
-.underline {
+/* .underline {
   width: 250px; 
   border-bottom: 1px solid  black; 
-  /* margin-left: 50px; */
+  margin-left: 100px;
   display: inline-block;
-
+} */
+.underline-text {
+  display: inline-block;
+  position: relative;
+  font-size: 10px; 
 }
+
+.underline-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; 
+  width: 250px; 
+  height: 1px; 
+  background-color: black; 
+}
+
 /* bottom form */
 .bottom-invoice {
   margin-top: 10px;
