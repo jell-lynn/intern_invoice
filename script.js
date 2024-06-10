@@ -59,7 +59,18 @@ function fetchJSONData() {
             // เพิ่มแถวลงใน tbody
             order_list.innerHTML = rows;
 
-            
+            // ส่วนรวมรายการ
+            const total_items = data["Orderlist"]["Total_items"];
+            const total_items_row = `
+                    <td colspan="2"><b>รวมรายการ</b></td>
+                    <td colspan="7"></td>
+                    <td>${total_items.Total_price_before_disc}</td>
+                    <td>${total_items.Total_discount}</td>
+                    <td>${total_items.Total_price_after_disc}</td>
+                    <td>${total_items.Vat}</td>
+            `;
+            // เพิ่มแถวลงใน tfoot
+            document.getElementById("total-items").innerHTML = total_items_row;
 
             //ส่วนราคารวมสินค้า
             Object.entries(data["Total Price"]).forEach(([key, value], index) => {
