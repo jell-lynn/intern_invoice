@@ -36,8 +36,6 @@ function fetchJSONData() {
             //ส่วนรายการสินค้า
             const order_list = document.getElementById("order-list");
             const orders = data["Orderlist"]["items"];
-            console.log(order_list)
-            print(orders)
             let rows = "";
             orders.forEach(item => {
                 const unitPrice = parseStringToFloatWithDecimal(item.Unit_price, 2);
@@ -100,10 +98,13 @@ function fetchJSONData() {
             console.error("Unable to fetch data:", error);
         });
 }
-
 // เรียกใช้ฟังก์ชัน fetchJSONData
+
 fetchJSONData();
 
+
+
+// ดึง data
 function parseStringToFloatWithDecimal(value, decimalPlaces) {
     return parseFloat(value).toFixed(decimalPlaces);
 }
