@@ -71,13 +71,19 @@ function fetchJSONData() {
 
             // ส่วนรวมรายการ
             const total_items = data["Orderlist"]["Total_items"];
+
+            const Total_price_before_disc = parseStringToFloatWithDecimal(total_items.Total_price_before_disc, 2);
+            const Total_discount = parseStringToFloatWithDecimal(total_items.Total_discount, 2);
+            const Total_price_after_disc = parseStringToFloatWithDecimal(total_items.Total_price_after_disc, 2);
+            const Vat = parseStringToFloatWithDecimal(total_items.Vat, 2);
+
             const total_items_row = `
                     <td colspan="2"><b>รวมรายการ</b></td>
                     <td colspan="7"></td>
-                    <td class="text-end">${total_items.Total_price_before_disc}</td>
-                    <td class="text-end">${total_items.Total_discount}</td>
-                    <td class="text-end">${total_items.Total_price_after_disc}</td>
-                    <td class="text-end">${total_items.Vat}</td>
+                    <td class="text-end">${Total_price_before_disc}</td>
+                    <td class="text-end">${Total_discount}</td>
+                    <td class="text-end">${Total_price_after_disc}</td>
+                    <td class="text-end">${Vat}</td>
             `;
             // เพิ่มแถวลงใน tfoot
             document.getElementById("total-items").innerHTML = total_items_row;
