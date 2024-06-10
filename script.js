@@ -36,9 +36,18 @@ function fetchJSONData() {
             //ส่วนรายการสินค้า
             const order_list = document.getElementById("order-list");
             const orders = data["Orderlist"]["items"];
-
+            console.log(order_list)
+            print(orders)
             let rows = "";
             orders.forEach(item => {
+                const unitPrice = parseStringToFloatWithDecimal(item.Unit_price, 2);
+                const unitDiscount = parseStringToFloatWithDecimal(item.Unit_discount, 2);
+                const pricePerUnitAfterDisc = parseStringToFloatWithDecimal(item.Price_per_unit_after_disc, 2);
+                const totalPriceBeforeDisc = parseStringToFloatWithDecimal(item.Total_price_before_disc, 2);
+                const totalDiscount = parseStringToFloatWithDecimal(item.Total_discount, 2);
+                const totalPriceAfterDisc = parseStringToFloatWithDecimal(item.Total_price_after_disc, 2);
+                const vat = parseStringToFloatWithDecimal(item.Vat, 2);
+
                 rows += `<tr style="color: blue;">
                         <td class="text-center">${item.Order_No}</td>
                         <td>${item.Product_ID}</td>
@@ -46,15 +55,15 @@ function fetchJSONData() {
                         <td class="text-center" style="width: 6%">${item.Vat_Item}</td>
                         <td class="text-center">${item.Quantity}</td>
                         <td class="text-center">${item.Unit}</td>
-                        <td class="text-center">${item.Unit_price}</td>
-                        <td class="text-end">${item.Unit_discount}</td>
-                        <td class="text-end">${item.Price_per_unit_after_disc}</td>
-                        <td class="text-end">${item.Total_price_before_disc}</td>
-                        <td class="text-end">${item.Total_discount}</td>
-                        <td class="text-end">${item.Total_price_after_disc}</td>
-                        <td class="text-end">${item.Vat}</td>
+                        <td class="text-center">${unitPrice}</td>
+                        <td class="text-end">${unitDiscount}</td>
+                        <td class="text-end">${pricePerUnitAfterDisc}</td>
+                        <td class="text-end">${totalPriceBeforeDisc}</td>
+                        <td class="text-end">${totalDiscount}</td>
+                        <td class="text-end">${totalPriceAfterDisc}</td>
+                        <td class="text-end">${vat}</td>
                         </tr>`;
-                    });
+            });
 
             // เพิ่มแถวลงใน tbody
             rows += `<td colspan="13" style="text-align: center;"> หมายเหตุ : ราคาต่อหน่วยมีขั้นต่ำต่อสถานที่ส่งตามจำนวนหน่วยที่ระบุ</td>`;
@@ -88,3 +97,7 @@ function fetchJSONData() {
 
 // เรียกใช้ฟังก์ชัน fetchJSONData
 fetchJSONData();
+
+function parseStringToFloatWithDecimal(value, decimalPlaces) {
+    return parseFloat(value).toFixed(decimalPlaces);
+}
